@@ -1,0 +1,480 @@
+/* ========================================= */
+/*    Elaborate Styles - Base & Palette    */
+/* ========================================= */
+
+:root {
+    --page-bg-color: #f8f8f8;   /* Base for gradient background */
+    /* --pattern-color: rgba(0, 0, 0, 0.025); */ /* Pattern color commented out */
+    --content-bg: #ffffff;
+    --text-color: #333333;
+    --heading-color: #3a3f44;    /* Slightly cooler dark grey/brown */
+    --subheading-color: #5c6570; /* Cooler medium grey/brown */
+    --border-color: #e5e7eb;     /* Lighter, cooler grey border */
+    --accent-color: #4f6d7a;      /* Refined Slate Blue/Grey */
+    --link-color: #5e35b1;       /* Slightly brighter purple */
+    --link-hover-color: #4527a0;
+
+    --note-bg: #f3f4f6;           /* Cooler light grey for notes */
+    --note-border: #6b7280;       /* Grey border */
+
+    --attention-bg: #fffbeb;      /* Paler yellow for attention */
+    --attention-border: #f59e0b;  /* Slightly muted amber border */
+
+    --memo-bg: #f0fdf4;           /* Paler green for memo */
+    --memo-border: #22c55e;       /* Brighter green border */
+
+    --code-block-bg: #1e1e1e;      /* Keep dark code blocks */
+    --code-block-text: #dcdcdc;
+    --code-block-border: #3c3c3c;
+
+    --inline-code-bg: #eef2f7;    /* Lighter blue-grey inline code */
+    --inline-code-border: #dbe1e8;
+    --inline-code-text: #1f2937;
+
+    --left-accent-width: 6px;    /* Width of the left accent bar */
+    --left-accent-spacing: 1.5em; /* <<< ADDED: Space between accent bar and text (for print) */
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: var(--page-bg-color);
+    /* <<< CHANGED: Background pattern removed for testing */
+    /* background-image: linear-gradient( ... ); */
+    /* background-size: 20px 20px; */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--content-bg);
+    max-width: 1100px;
+    margin: 3em auto;
+    /* <<< CHANGED: Padding updated to use spacing variable (matching last fix) */
+    padding: 2.5em 3em 2.5em calc(3em + var(--left-accent-width) + var(--left-accent-spacing));
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    position: relative;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* Left Accent Bar - For SCREEN */
+body::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--left-accent-width);
+    background-color: var(--accent-color);
+}
+
+/* ========================================= */
+/*           Headings & Structure          */
+/* ========================================= */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    line-height: 1.35;
+    font-weight: 700;
+    /* <<< CHANGED: Negative letter-spacing removed */
+    /* letter-spacing: -0.5px; */
+    letter-spacing: normal; /* Explicitly set to normal */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+h1.main-title {
+    font-size: 2.8em;
+    text-align: left;
+    margin-bottom: 1.5em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+h2.section-title {
+    font-size: 2.1em;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5em;
+    margin-top: 3.5em;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+h3.subsection-title {
+    font-size: 1.6em;
+    color: var(--subheading-color);
+    font-weight: 600;
+}
+
+h4.subsection-title {
+    font-size: 1.3em;
+    color: var(--subheading-color);
+    font-style: normal;
+    font-weight: 600;
+}
+
+h5.subsection-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: none;
+    /* letter-spacing: normal; */ /* Already set to normal in h1-h6 rule */
+    border-left: 3px solid var(--accent-color);
+    padding-left: 0.8em;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 4em 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* ========================================= */
+/*            Text & Paragraphs            */
+/* ========================================= */
+/* ... (text styles remain the same) ... */
+p.body-paragraph {
+    margin-bottom: 1.4em;
+}
+
+.emphasis {
+    font-style: italic;
+    color: var(--subheading-color);
+    -webkit-print-color-adjust: exact; /* Keep text color */
+    print-color-adjust: exact;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    -webkit-print-color-adjust: exact; /* Keep link color */
+    print-color-adjust: exact;
+}
+
+a:hover, a:focus {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+/* ========================================= */
+/*               Lists                     */
+/* ========================================= */
+/* ... (list styles remain the same) ... */
+ul, ol {
+    margin-left: 1em;
+    padding-left: 1.5em;
+    margin-bottom: 1.4em;
+}
+
+li.list-item {
+    margin-bottom: 0.8em;
+    padding-left: 0.5em;
+}
+
+li p.list-item {
+    margin-bottom: 0;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0.7em;
+    margin-bottom: 1em;
+}
+
+/* Use custom bullet points for UL */
+ul {
+    list-style: none;
+}
+ul > li.list-item::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.3em;
+    margin-right: 0.3em;
+    -webkit-print-color-adjust: exact; /* Keep bullet color */
+    print-color-adjust: exact;
+}
+/* Nested list bullets */
+ul ul > li.list-item::before {
+    content: "◦";
+    color: var(--subheading-color);
+}
+ul ul ul > li.list-item::before {
+    content: "▪";
+    color: var(--text-color);
+}
+
+/* ========================================= */
+/*            Note & Alert Boxes           */
+/* ========================================= */
+/* ... (box styles remain the same) ... */
+.note-box, .attention-box, .memo-box {
+    border: 1px solid;
+    padding: 1.2em 1.8em 1.2em 1.8em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    border-left-width: 6px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    -webkit-print-color-adjust: exact; /* Keep box colors/borders */
+    print-color-adjust: exact;
+}
+
+/* Title styling moved inside the box */
+.note-box::before, .attention-box::before, .memo-box::before {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+    font-size: 1em;
+    text-transform: none;
+    /* letter-spacing: normal; */ /* Already set to normal */
+    -webkit-print-color-adjust: exact; /* Keep title colors */
+    print-color-adjust: exact;
+}
+
+.note-box {
+    background-color: var(--note-bg);
+    border-color: var(--note-border);
+    border-left-color: var(--note-border);
+}
+.note-box::before { content: "Note"; color: var(--note-border); }
+
+.attention-box {
+    background-color: var(--attention-bg);
+    border-color: var(--attention-border);
+    border-left-color: var(--attention-border);
+}
+.attention-box::before { content: "Attention"; color: var(--attention-border); }
+
+.memo-box {
+    background-color: var(--memo-bg);
+    border-color: var(--memo-border);
+    border-left-color: var(--memo-border);
+}
+.memo-box::before { content: "Memo"; color: var(--memo-border); }
+
+.note-box p:last-child,
+.attention-box p:last-child,
+.memo-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================= */
+/*           Code & Preformatted           */
+/* ========================================= */
+/* ... (code styles remain the same) ... */
+pre {
+    background-color: var(--code-block-bg);
+    border: 1px solid var(--code-block-border);
+    color: var(--code-block-text);
+    padding: 1.5em;
+    overflow-x: auto;
+    margin-top: 1.2em;
+    margin-bottom: 2em;
+    border-radius: 6px;
+    font-family: "JetBrains Mono", "Fira Code", Consolas, Monaco, monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    -webkit-print-color-adjust: exact; /* Keep code block colors/borders */
+    print-color-adjust: exact;
+}
+
+code.code-block {
+    padding: 0;
+    background: none;
+    color: inherit;
+    font-size: inherit;
+    box-shadow: none;
+}
+
+/* Inline code elements */
+code.path-example,
+code.file-extension,
+code.registry-key {
+    font-family: "JetBrains Mono", "Fira Code", Consolas, Monaco, monospace;
+    background-color: var(--inline-code-bg);
+    color: var(--inline-code-text);
+    padding: 0.25em 0.6em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid var(--inline-code-border);
+    word-break: break-all;
+    vertical-align: middle;
+    -webkit-print-color-adjust: exact; /* Keep inline code colors/borders */
+    print-color-adjust: exact;
+}
+
+/* ========================================= */
+/*              Print Styles               */
+/* ========================================= */
+
+/*
+ * IMPORTANT NOTE FOR PRINTING:
+ * To ensure content colors, backgrounds, and the left border are printed,
+ * you MUST enable the "Print Backgrounds" or "Background Graphics"
+ * option in your browser's print dialog when printing to PDF.
+*/
+@media print {
+    html {
+        /* Force plain white background for printing */
+        background-image: none !important;
+        background-color: #ffffff !important;
+    }
+    body {
+        /* <<< UPDATED print styles based on last fix */
+        line-height: 1.5;
+        margin: 0.7in !important;
+        box-shadow: none !important;
+        max-width: none !important;
+        border-radius: 0 !important;
+        position: static !important;
+        overflow: visible !important;
+        border-left: var(--left-accent-width) solid var(--accent-color) !important;
+        padding: 0.5in 0.7in 0.5in var(--left-accent-spacing) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Hide the screen accent bar pseudo-element in print */
+    body::before {
+        display: none !important;
+    }
+
+    /* Headings in print - letter-spacing is inherited as 'normal' */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        /* letter-spacing: normal !important; <-- Already normal */
+        font-weight: bold !important;
+        color: var(--heading-color) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    h2.section-title {
+        border-bottom-color: var(--accent-color) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+     h5.subsection-title {
+        border-left-color: var(--accent-color) !important;
+        color: var(--accent-color) !important;
+        padding-left: 0.8em !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    hr {
+        background-color: var(--border-color) !important;
+         -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    a {
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        color: var(--link-color) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    ul > li.list-item::before {
+        color: var(--accent-color) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    ul ul > li.list-item::before {
+        color: var(--subheading-color) !important;
+    }
+    ul ul ul > li.list-item::before {
+         color: var(--text-color) !important;
+    }
+
+    /* ... (rest of print styles remain the same) ... */
+    .note-box, .attention-box, .memo-box {
+        border-left-width: 6px !important; /* Keep this specific border */
+        color: var(--text-color) !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        page-break-inside: avoid;
+    }
+    .note-box {
+        background-color: var(--note-bg) !important;
+        border-color: var(--note-border) !important;
+        border-left-color: var(--note-border) !important;
+    }
+    .attention-box {
+        background-color: var(--attention-bg) !important;
+        border-color: var(--attention-border) !important;
+        border-left-color: var(--attention-border) !important;
+    }
+    .memo-box {
+        background-color: var(--memo-bg) !important;
+        border-color: var(--memo-border) !important;
+        border-left-color: var(--memo-border) !important;
+    }
+
+    .note-box::before, .attention-box::before, .memo-box::before {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+        text-transform: none;
+        font-size: 1em;
+         -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+     .note-box::before { content: "Note"; color: var(--note-border) !important; }
+     .attention-box::before { content: "Attention"; color: var(--attention-border) !important; }
+     .memo-box::before { content: "Memo"; color: var(--memo-border) !important; }
+
+    pre {
+        background-color: var(--code-block-bg) !important;
+        border: 1px solid var(--code-block-border) !important;
+        color: var(--code-block-text) !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        font-size: 0.9em !important;
+        line-height: 1.5 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        page-break-inside: avoid;
+    }
+
+    code.path-example,
+    code.file-extension,
+    code.registry-key {
+        background-color: var(--inline-code-bg) !important;
+        border: 1px solid var(--inline-code-border) !important;
+        color: var(--inline-code-text) !important;
+        border-radius: 0 !important;
+        font-size: 0.9em !important;
+         -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        word-break: break-all !important;
+    }
+}
