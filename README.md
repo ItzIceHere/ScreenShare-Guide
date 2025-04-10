@@ -75,4 +75,4 @@ Whether you are a server staff member learning the ropes, an experienced PC chec
 
 ---
 
-*Note: The information provided in the guide is intended for educational purposes within the context of legitimate anti-cheat and fair play enforcement. Misuse of this information is discouraged.*
+*Note: The information provided in the guides is intended for educational purposes within the context of legitimate SS and fair play enforcement. Misuse of this information is discouraged.*
