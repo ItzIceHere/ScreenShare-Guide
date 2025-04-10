@@ -12,7 +12,7 @@ Whether you are a server staff member learning the ropes, an experienced PC chec
 *   **What is a Screenshare?** Definition and purpose.
 *   **Goal:** Demonstrating cheat usage (Possession vs. Execution).
 *   **Execution Context:** Importance of game instance/boot instance.
-*   **Tools Overview:** Screen sharing (AnyDesk), Manual tools (Process Hacker/System Informer), Automatic tools (Echo, Ocean).
+*   **Tools Overview:**
 *   **Staffer Perspective:** Ethical goals, learning from failure, integrity.
 
 ### 2. Red Lotus Principles (Ethical Framework)
