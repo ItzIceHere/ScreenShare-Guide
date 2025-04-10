@@ -1,4 +1,4 @@
-# RedLotus SS GUIDE Remastered - 
+# RedLotus SS GUIDE Remastered 
 
 This repository hosts key resources for understanding and performing ScreenShares (SS) or Hack Checks, maintained under the RedLotus umbrella. It contains two primary guides:
 
