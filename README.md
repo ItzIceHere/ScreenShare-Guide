@@ -93,12 +93,6 @@ The focus remains on providing the most relevant, effective, and broadly applica
 
 ---
 
-## Target Audience:
-
-*   Server Administrators & Staff
-*   PC Checkers / ScreenSharers (Beginner to Advanced)
-*   Anti-Cheat Developers & Enthusiasts
-*   Cybersecurity Students & Professionals interested in practical DFIR techniques
 
 ## How to Use This Resource:
 
